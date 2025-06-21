@@ -1,0 +1,107 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Navbar container */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #0d1b2a;
+  color: white;
+  padding: 1rem 2rem;
+  position: relative;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Logo section */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo img {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.navbar-logo h1 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.navbar-logo span {
+  color: #00b4d8;
+}
+
+/* Links styling */
+.navbar-links {
+  display: flex;
+  gap: 2rem;
+  transition: all 0.4s ease;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  position: relative;
+}
+
+.navbar-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #00b4d8;
+  transition: 0.3s;
+}
+
+.navbar-links a:hover::after {
+  width: 100%;
+}
+
+/* Toggle menu (mobile) */
+.navbar-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.navbar-toggle .bar {
+  width: 25px;
+  height: 3px;
+  background: white;
+  margin: 3px 0;
+  transition: 0.3s;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .navbar-links {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: #1b263b;
+    flex-direction: column;
+    align-items: center;
+    max-height: 0;
+    overflow: hidden;
+  }
+
+  .navbar-links.open {
+    max-height: 300px;
+    padding: 1rem 0;
+  }
+
+  .navbar-toggle {
+    display: flex;
+  }
+}
